@@ -1,0 +1,80 @@
+import xyz.jpenilla.resourcefactory.bukkit.BukkitPluginYaml
+import xyz.jpenilla.resourcefactory.paper.PaperPluginYaml
+
+plugins {
+    kotlin("jvm") version libs.versions.kotlin.get()
+    kotlin("plugin.serialization") version libs.versions.kotlin.get()
+    alias(libs.plugins.shadow)
+    alias(libs.plugins.run.paper)
+    alias(libs.plugins.resource.factory.paper)
+}
+
+repositories {
+    gradlePluginPortal()
+    mavenCentral()
+
+    maven("https://repo.papermc.io/repository/maven-public/")
+    maven("https://repo.codemc.io/repository/maven-releases/")
+    maven("https://repo.codemc.io/repository/maven-snapshots/")
+}
+
+@Suppress("VulnerableLibrariesLocal")
+dependencies {
+    compileOnly(libs.paperApi)
+    compileOnly(libs.packetEvents)
+
+    implementation(libs.kotlin.stdlib)
+    implementation(libs.kotlinx.serialization)
+    implementation(libs.kotlinx.coroutines)
+    implementation(libs.compactMono)
+    implementation(libs.configurate.hocon)
+    implementation(libs.configurate.extra.kotlin)
+
+    testImplementation(kotlin("test"))
+    testImplementation(libs.junit)
+}
+
+paperPluginYaml {
+    name = rootProject.name
+
+    main = "io.github.runkang10.fixedGameMode.FixedGameMode"
+    bootstrapper = "io.github.runkang10.fixedGameMode.FixedGameModeBootstrap"
+    apiVersion = "26.2"
+
+    load = BukkitPluginYaml.PluginLoadOrder.STARTUP
+    authors.addAll("Runkang10")
+    website = "https://github.com/Runkang10/FixedGameMode"
+
+    dependencies {
+        server("packetevents", PaperPluginYaml.Load.BEFORE, joinClasspath = true, required = true)
+    }
+}
+
+kotlin {
+    jvmToolchain(25)
+}
+
+tasks {
+    shadowJar {
+        archiveBaseName.set(rootProject.name)
+        archiveVersion.set("")
+        archiveClassifier.set("")
+
+        duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    }
+
+    test {
+        useJUnitPlatform()
+        testLogging {
+            showExceptions = true
+            showCauses = true
+            showStackTraces = true
+            showStandardStreams = true
+        }
+    }
+
+    runServer {
+        minecraftVersion(libs.versions.minecraft.get())
+        jvmArgs("-Xms2G", "-Xmx2G", "-Dcom.mojang.eula.agree=true")
+    }
+}
