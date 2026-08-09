@@ -24,7 +24,7 @@ In other words: allow game mode switcher usage if you have permission, otherwise
 | `/spectator [<target>]` | `/gmsp` | Switches game mode to spectator              | `fixedgamemode.spectator`      |
 | `/survival [<target>]`  | `/gms`  | Switches game mode to survival               | `fixedgamemode.survival`       |
 | `/fixedgamemode`        | `/fgm`  | Gives access to the `/fixedgamemode` command | `fixedgamemode.command`        |
-| `/fixedgamemode reload` |         | Reloads the plugin configuration             | `fixedgamemode.command.reload` |
+| `/fixedgamemode reload` |         | Reloads the plugin configurations            | `fixedgamemode.command.reload` |
 
 ## Permissions
 | Permission                     | Description                                                        | Default |
@@ -34,5 +34,5 @@ In other words: allow game mode switcher usage if you have permission, otherwise
 | `fixedgamemode.spectator`      | Allows switching game mode (via command or the game mode switcher) | OP      |
 | `fixedgamemode.survival`       | Allows switching game mode (via command or the game mode switcher) | OP      |
 | `fixedgamemode.command`        | Grants access to the `/fixedgamemode` command                      | OP      |
-| `fixedgamemode.command.reload` | Allows reloading the plugin configuration                          | OP      |
+| `fixedgamemode.command.reload` | Allows reloading the plugin configurations                         | OP      |
 

@@ -20,13 +20,13 @@ class LoggedConfiguration<T : Any>(
 
 
     override fun load(): IConfiguration.Result {
-        logger.info("Loading '$fileName' configurations...")
+        logger.info("Loading '$fileName' configuration...")
 
         val result = instance.load()
         when (result) {
-            is IConfiguration.Result.Success<*> -> logger.success("Loaded '$fileName' configurations.")
+            is IConfiguration.Result.Success<*> -> logger.success("Loaded '$fileName' configuration.")
             is IConfiguration.Result.Failure -> logger.error(
-                "Failed to load configurations from '$fileName'! Default configuration will be used.",
+                "Failed to load configuration from '$fileName'! Default configuration will be used.",
                 result.error
             )
         }
