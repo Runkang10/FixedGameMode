@@ -12,7 +12,7 @@ solution for you.
 In other words: allow game mode switcher usage if you have permission, otherwise default error message.
 
 ## Requirements
-- [Paper](https://papermc.io/downloads/paper) or any Paper fork
+- [Paper](https://papermc.io/downloads/paper) or any <u>Paper fork</u>
 - Java 25
 - Install [PacketEvents](https://modrinth.com/plugin/packetevents)
 
