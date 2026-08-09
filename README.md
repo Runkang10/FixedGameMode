@@ -17,22 +17,22 @@ In other words: allow game mode switcher usage if you have permission, otherwise
 - Install [PacketEvents](https://modrinth.com/plugin/packetevents)
 
 ## Commands
-| Command                 | Aliases | Description                   | Permission                     |
-|-------------------------|---------|-------------------------------|--------------------------------|
-| `/adventure [<target>]` | `/gma`  | Switch game mode to adventure | `fixedgamemode.adventure`      |
-| `/creative [<target>]`  | `/gmc`  | Switch game mode to creative  | `fixedgamemode.creative`       |
-| `/spectator [<target>]` | `/gmsp` | Switch game mode to spectator | `fixedgamemode.spectator`      |
-| `/survival [<target>]`  | `/gms`  | Switch game mode to survival  | `fixedgamemode.survival`       |
-| `/fixedgamemode`        | `/fgm`  |                               | `fixedgamemode.command`        |
-| `/fixedgamemode reload` |         | Reload plugin configurations  | `fixedgamemode.command.reload` |
+| Command                 | Aliases | Description                                  | Permission                     |
+|-------------------------|---------|----------------------------------------------|--------------------------------|
+| `/adventure [<target>]` | `/gma`  | Switches game mode to adventure              | `fixedgamemode.adventure`      |
+| `/creative [<target>]`  | `/gmc`  | Switches game mode to creative               | `fixedgamemode.creative`       |
+| `/spectator [<target>]` | `/gmsp` | Switches game mode to spectator              | `fixedgamemode.spectator`      |
+| `/survival [<target>]`  | `/gms`  | Switches game mode to survival               | `fixedgamemode.survival`       |
+| `/fixedgamemode`        | `/fgm`  | Gives access to the `/fixedgamemode` command | `fixedgamemode.command`        |
+| `/fixedgamemode reload` |         | Reloads the plugin configuration             | `fixedgamemode.command.reload` |
 
 ## Permissions
-| Permission                     | Description                                            | Default |
-|--------------------------------|--------------------------------------------------------|---------|
-| `fixedgamemode.adventure`      | Switch game mode (both command and game mode switcher) | OP      |
-| `fixedgamemode.creative`       | Switch game mode (both command and game mode switcher) | OP      |
-| `fixedgamemode.spectator`      | Switch game mode (both command and game mode switcher) | OP      |
-| `fixedgamemode.survival`       | Switch game mode (both command and game mode switcher) | OP      |
-| `fixedgamemode.command`        | Access to `/fixedgamemode` command                     | OP      |
-| `fixedgamemode.command.reload` | Reload the plugin configurations                       | OP      |
+| Permission                     | Description                                                        | Default |
+|--------------------------------|--------------------------------------------------------------------|---------|
+| `fixedgamemode.adventure`      | Allows switching game mode (via command or the game mode switcher) | OP      |
+| `fixedgamemode.creative`       | Allows switching game mode (via command or the game mode switcher) | OP      |
+| `fixedgamemode.spectator`      | Allows switching game mode (via command or the game mode switcher) | OP      |
+| `fixedgamemode.survival`       | Allows switching game mode (via command or the game mode switcher) | OP      |
+| `fixedgamemode.command`        | Grants access to the `/fixedgamemode` command                      | OP      |
+| `fixedgamemode.command.reload` | Allows reloading the plugin configuration                          | OP      |
 
