@@ -17,12 +17,14 @@ In other words: allow game mode switcher usage if you have permission, otherwise
 - Install [PacketEvents](https://modrinth.com/plugin/packetevents)
 
 ## Commands
-| Command                 | Aliases | Description                   | Permission                |
-|-------------------------|---------|-------------------------------|---------------------------|
-| `/adventure [<target>]` | `/gma`  | Switch game mode to adventure | `fixedgamemode.adventure` |
-| `/creative [<target>]`  | `/gmc`  | Switch game mode to creative  | `fixedgamemode.creative`  |
-| `/spectator [<target>]` | `/gmsp` | Switch game mode to spectator | `fixedgamemode.spectator` |
-| `/survival [<target>]`  | `/gms`  | Switch game mode to survival  | `fixedgamemode.survival`  |
+| Command                 | Aliases | Description                   | Permission                     |
+|-------------------------|---------|-------------------------------|--------------------------------|
+| `/adventure [<target>]` | `/gma`  | Switch game mode to adventure | `fixedgamemode.adventure`      |
+| `/creative [<target>]`  | `/gmc`  | Switch game mode to creative  | `fixedgamemode.creative`       |
+| `/spectator [<target>]` | `/gmsp` | Switch game mode to spectator | `fixedgamemode.spectator`      |
+| `/survival [<target>]`  | `/gms`  | Switch game mode to survival  | `fixedgamemode.survival`       |
+| `/fixedgamemode`        | `/fgm`  |                               | `fixedgamemode.command`        |
+| `/fixedgamemode reload` |         | Reload plugin configurations  | `fixedgamemode.command.reload` |
 
 ## Permissions
 | Permission                     | Description                                            | Default |
