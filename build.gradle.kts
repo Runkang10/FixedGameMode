@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.shadow)
     alias(libs.plugins.run.paper)
     alias(libs.plugins.resource.factory.paper)
+    alias(libs.plugins.minotaur)
 }
 
 repositories {
@@ -18,8 +19,7 @@ repositories {
     maven("https://repo.codemc.io/repository/maven-snapshots/")
 }
 
-@Suppress("VulnerableLibrariesLocal")
-dependencies {
+@Suppress("VulnerableLibrariesLocal") dependencies {
     compileOnly(libs.paperApi)
     compileOnly(libs.packetEvents)
 
@@ -46,7 +46,7 @@ paperPluginYaml {
     website = "https://github.com/Runkang10/FixedGameMode"
 
     dependencies {
-        server("packetevents", PaperPluginYaml.Load.BEFORE, joinClasspath = true, required = true)
+        server("packetevents", PaperPluginYaml.Load.BEFORE, joinClasspath = true, required = false)
     }
 }
 
@@ -61,6 +61,25 @@ tasks {
         archiveClassifier.set("")
 
         duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    }
+
+    if (System.getenv("RELEASE")?.toBoolean() ?: false) {
+        modrinth {
+            token.set(System.getenv("MODRINTH_TOKEN") ?: error("Missing 'MODRINTH_TOKEN' variable!"))
+
+            projectId.set("xbr87sYf")
+            versionNumber.set(System.getenv("VERSION") ?: error("Missing 'VERSION' variable!"))
+            versionType.set("release")
+            uploadFile.set(shadowJar)
+            gameVersions.addAll("26.1", "26.1.1", "26.1.2", "26.2")
+            loaders.addAll("paper", "purpur", "folia")
+            changelog.set(System.getenv("CHANGELOG") ?: error("Missing 'CHANGELOG' variable!"))
+            dependencies {
+                required.project("packetevents")
+            }
+
+            syncBodyFrom.set(rootProject.file("README.md").readText())
+        }
     }
 
     test {
