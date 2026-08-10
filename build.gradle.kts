@@ -63,24 +63,22 @@ tasks {
         duplicatesStrategy = DuplicatesStrategy.INCLUDE
     }
 
-    if (System.getenv("RELEASE")?.toBoolean() ?: false) {
-        modrinth {
-            token.set(System.getenv("MODRINTH_TOKEN") ?: error("Missing 'MODRINTH_TOKEN' variable!"))
+    if (System.getenv("RELEASE")?.toBoolean() ?: false) modrinth {
+        token.set(System.getenv("MODRINTH_TOKEN") ?: error("Missing 'MODRINTH_TOKEN' variable!"))
 
-            projectId.set("xbr87sYf")
-            versionName.set(System.getenv("VERSION_NAME") ?: error("Missing 'VERSION_NAME' variable!"))
-            versionNumber.set(System.getenv("VERSION")?.removePrefix("v") ?: error("Missing 'VERSION' variable!"))
-            versionType.set("release")
-            uploadFile.set(shadowJar)
-            gameVersions.addAll("26.1", "26.1.1", "26.1.2", "26.2")
-            loaders.addAll("paper", "purpur", "folia")
-            changelog.set(System.getenv("CHANGELOG") ?: error("Missing 'CHANGELOG' variable!"))
-            dependencies {
-                required.project("packetevents")
-            }
-
-            syncBodyFrom.set(rootProject.file("README.md").readText())
+        projectId.set("xbr87sYf")
+        versionName.set(System.getenv("VERSION_NAME") ?: error("Missing 'VERSION_NAME' variable!"))
+        versionNumber.set(System.getenv("VERSION")?.removePrefix("v") ?: error("Missing 'VERSION' variable!"))
+        versionType.set("release")
+        uploadFile.set(shadowJar)
+        gameVersions.addAll("26.1", "26.1.1", "26.1.2", "26.2")
+        loaders.addAll("paper", "purpur", "folia")
+        changelog.set(System.getenv("CHANGELOG") ?: error("Missing 'CHANGELOG' variable!"))
+        dependencies {
+            required.project("packetevents")
         }
+
+        syncBodyFrom.set(rootProject.file("README.md").readText())
     }
 
     test {
