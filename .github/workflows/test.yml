@@ -1,6 +1,7 @@
 name: Test
 on:
   push:
+    branches: [ '**' ]
     paths: [ gradle/**, src/**, '*.kts', gradle.properties ]
   pull_request:
     paths: [ gradle/**, src/**, '*.kts', gradle.properties ]
