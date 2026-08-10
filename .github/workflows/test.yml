@@ -1,7 +1,19 @@
 name: Test
 on:
   push:
+    paths:
+      - gradle/
+      - src/
+      - build.gradle.kts
+      - gradle.properties
+      - settings.gradle.kts
   pull_request:
+    paths:
+      - gradle/
+      - src/
+      - build.gradle.kts
+      - gradle.properties
+      - settings.gradle.kts
 
 jobs:
   test:
