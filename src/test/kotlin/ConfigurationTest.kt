@@ -8,6 +8,8 @@ import org.spongepowered.configurate.objectmapping.meta.Comment
 import org.spongepowered.configurate.transformation.ConfigurationTransformation
 import org.spongepowered.configurate.transformation.TransformAction
 import java.io.File
+import kotlin.test.assertEquals
+import kotlin.test.assertIs
 
 class ConfigurationTest {
     @ConfigSerializable
@@ -34,14 +36,8 @@ class ConfigurationTest {
                 )
                 .build()
         )
-        when (val result = configuration.load()) {
-            is IConfiguration.Result.Success<*> -> {
-                print("Success migrated=${result.migrated}!")
-            }
-
-            is IConfiguration.Result.Failure -> {
-                print(result.error)
-            }
-        }
+        val result = configuration.load()
+        assertIs<IConfiguration.Result.Success<Data>>(result)
+        assertEquals(5, result.data.version)
     }
 }
