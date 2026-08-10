@@ -26,13 +26,13 @@ In other words: allow game mode switcher usage if you have permission, otherwise
 | Command                 | Aliases | Description                                  | Permission                       |
 |-------------------------|---------|----------------------------------------------|----------------------------------|
 | `/adventure`            | `/gma`  | Switches game mode to adventure              | `fixedgamemode.adventure`        |
-| `/adventure [<target>]` |         | Switches the target's game mode to adventure | `fixedgamemode.adventure.others` |
+| `/adventure <target>`   |         | Switches the target's game mode to adventure | `fixedgamemode.adventure.others` |
 | `/creative`             | `/gmc`  | Switches game mode to creative               | `fixedgamemode.creative`         |
-| `/creative [<target>]`  |         | Switches the target's game mode creative     | `fixedgamemode.creative.others`  |
+| `/creative <target>`    |         | Switches the target's game mode creative     | `fixedgamemode.creative.others`  |
 | `/spectator`            | `/gmsp` | Switches game mode to spectator              | `fixedgamemode.spectator`        |
-| `/spectator [<target>]` |         | Switches the target's game mode spectator    | `fixedgamemode.spectator.others` |
+| `/spectator <target>`   |         | Switches the target's game mode spectator    | `fixedgamemode.spectator.others` |
 | `/survival`             | `/gms`  | Switches game mode to survival               | `fixedgamemode.survival`         |
-| `/survival [<target>]`  |         | Switches the target's game mode survival     | `fixedgamemode.survival.others`  |
+| `/survival <target>`    |         | Switches the target's game mode survival     | `fixedgamemode.survival.others`  |
 | `/fixedgamemode`        | `/fgm`  | Gives access to the `/fixedgamemode` command | `fixedgamemode.command`          |
 | `/fixedgamemode reload` |         | Reloads the plugin configurations            | `fixedgamemode.command.reload`   |
 
