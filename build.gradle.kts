@@ -68,6 +68,7 @@ tasks {
             token.set(System.getenv("MODRINTH_TOKEN") ?: error("Missing 'MODRINTH_TOKEN' variable!"))
 
             projectId.set("xbr87sYf")
+            versionName.set(System.getenv("VERSION_NAME") ?: error("Missing 'VERSION_NAME' variable!"))
             versionNumber.set(System.getenv("VERSION")?.removePrefix("v") ?: error("Missing 'VERSION' variable!"))
             versionType.set("release")
             uploadFile.set(shadowJar)
