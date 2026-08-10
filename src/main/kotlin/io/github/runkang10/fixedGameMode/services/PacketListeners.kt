@@ -4,7 +4,6 @@ import com.github.retrooper.packetevents.PacketEvents
 import io.github.runkang10.compactmono.services.ColoredLogger
 import io.github.runkang10.compactmono.services.GenericService
 import io.github.runkang10.compactmono.services.KeyedRegistry
-import io.github.runkang10.fixedGameMode.extensions.isPluginLoaded
 import io.github.runkang10.fixedGameMode.packetListeners.GameModePacketListener
 import org.bukkit.Bukkit
 
@@ -16,7 +15,7 @@ class PacketListeners(registry: KeyedRegistry) : GenericService {
         logger.loading("Packet listeners")
 
         val pluginManager = Bukkit.getPluginManager()
-        if (!pluginManager.isPluginLoaded("packetevents")) {
+        if (pluginManager.getPlugin("packetevents") == null) {
             logger.error("PacketEvents not found! Only plugin commands will work.")
             logger.error("Please install PacketEvents from Modrinth: https://modrinth.com/plugin/packetevents")
             return
