@@ -27,7 +27,7 @@ object Permissions {
             val self = Permission(pair.self)
             val others = Permission(pair.others)
             DefaultPermissions.registerPermission(self)
-            DefaultPermissions.registerPermission(others, self)
+            DefaultPermissions.registerPermission(others)
         }
 
         listOf(Core.COMMAND, Core.RELOAD).forEach { permission ->
