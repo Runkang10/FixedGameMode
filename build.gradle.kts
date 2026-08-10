@@ -68,7 +68,7 @@ tasks {
             token.set(System.getenv("MODRINTH_TOKEN") ?: error("Missing 'MODRINTH_TOKEN' variable!"))
 
             projectId.set("xbr87sYf")
-            versionNumber.set(System.getenv("VERSION") ?: error("Missing 'VERSION' variable!"))
+            versionNumber.set(System.getenv("VERSION")?.removePrefix("v") ?: error("Missing 'VERSION' variable!"))
             versionType.set("release")
             uploadFile.set(shadowJar)
             gameVersions.addAll("26.1", "26.1.1", "26.1.2", "26.2")
