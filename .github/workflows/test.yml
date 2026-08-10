@@ -1,19 +1,9 @@
 name: Test
 on:
   push:
-    paths:
-      - gradle/
-      - src/
-      - build.gradle.kts
-      - gradle.properties
-      - settings.gradle.kts
+    paths: [ gradle/**, src/**, '*.kts', gradle.properties ]
   pull_request:
-    paths:
-      - gradle/
-      - src/
-      - build.gradle.kts
-      - gradle.properties
-      - settings.gradle.kts
+    paths: [ gradle/**, src/**, '*.kts', gradle.properties ]
 
 jobs:
   test:
@@ -24,10 +14,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6.0.3
+        uses: actions/checkout@v7.0.1
 
       - name: Set up JDK
-        uses: actions/setup-java@v5.2.0
+        uses: actions/setup-java@v5.7.0
         with:
           distribution: temurin
           java-version: 25
