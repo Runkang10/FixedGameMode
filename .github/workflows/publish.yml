@@ -34,6 +34,15 @@ jobs:
           VERSION: ${{ github.event.release.tag_name }}
           CHANGELOG: ${{ github.event.release.body }}
         run: ./gradlew modrinth
+
+      - name: Publish to Hangar
+        env:
+          RELEASE: true
+          HANGAR_TOKEN: ${{ secrets.HANGAR_TOKEN }}
+          VERSION_NAME: ${{ github.event.release.name }}
+          VERSION: ${{ github.event.release.tag_name }}
+          CHANGELOG: ${{ github.event.release.body }}
+        run: ./gradlew publishPluginPublicationToHangar
   publish-description:
     name: Publish description
     if: github.event_name == 'push'
@@ -60,3 +69,12 @@ jobs:
           VERSION: N/A
           CHANGELOG: N/A
         run: ./gradlew modrinthSyncBody --no-configuration-cache --no-build-cache
+
+      - name: Update Description (Hangar)
+        env:
+          RELEASE: true
+          HANGAR_TOKEN: ${{ secrets.HANGAR_TOKEN }}
+          VERSION_NAME: N/A
+          VERSION: N/A
+          CHANGELOG: N/A
+        run: ./gradlew syncPluginPublicationMainResourcePagePageToHangar --no-configuration-cache --no-build-cache
