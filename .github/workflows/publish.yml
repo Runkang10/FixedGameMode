@@ -65,6 +65,7 @@ jobs:
         env:
           RELEASE: true
           MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+          HANGAR_TOKEN: N/A
           VERSION_NAME: N/A
           VERSION: N/A
           CHANGELOG: N/A
@@ -73,6 +74,7 @@ jobs:
       - name: Update Description (Hangar)
         env:
           RELEASE: true
+          MODRINTH_TOKEN: N/A
           HANGAR_TOKEN: ${{ secrets.HANGAR_TOKEN }}
           VERSION_NAME: N/A
           VERSION: N/A
