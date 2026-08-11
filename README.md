@@ -23,18 +23,18 @@ In other words: allow game mode switcher usage if you have permission, otherwise
 - Install [PacketEvents](https://modrinth.com/plugin/packetevents)
 
 ## Commands
-| Command                 | Aliases | Description                                  | Permission                       |
-|-------------------------|---------|----------------------------------------------|----------------------------------|
-| `/adventure`            | `/gma`  | Switches game mode to adventure              | `fixedgamemode.adventure`        |
-| `/adventure <target>`   |         | Switches the target's game mode to adventure | `fixedgamemode.adventure.others` |
-| `/creative`             | `/gmc`  | Switches game mode to creative               | `fixedgamemode.creative`         |
-| `/creative <target>`    |         | Switches the target's game mode creative     | `fixedgamemode.creative.others`  |
-| `/spectator`            | `/gmsp` | Switches game mode to spectator              | `fixedgamemode.spectator`        |
-| `/spectator <target>`   |         | Switches the target's game mode spectator    | `fixedgamemode.spectator.others` |
-| `/survival`             | `/gms`  | Switches game mode to survival               | `fixedgamemode.survival`         |
-| `/survival <target>`    |         | Switches the target's game mode survival     | `fixedgamemode.survival.others`  |
-| `/fixedgamemode`        | `/fgm`  | Gives access to the `/fixedgamemode` command | `fixedgamemode.command`          |
-| `/fixedgamemode reload` |         | Reloads the plugin configurations            | `fixedgamemode.command.reload`   |
+| Command                 | Aliases | Description                                  |
+|-------------------------|---------|----------------------------------------------|
+| `/adventure`            | `/gma`  | Switches game mode to adventure              |
+| `/adventure <target>`   |         | Switches the target's game mode to adventure |
+| `/creative`             | `/gmc`  | Switches game mode to creative               |
+| `/creative <target>`    |         | Switches the target's game mode creative     |
+| `/spectator`            | `/gmsp` | Switches game mode to spectator              |
+| `/spectator <target>`   |         | Switches the target's game mode spectator    |
+| `/survival`             | `/gms`  | Switches game mode to survival               |
+| `/survival <target>`    |         | Switches the target's game mode survival     |
+| `/fixedgamemode`        | `/fgm`  | Gives access to the `/fixedgamemode` command |
+| `/fixedgamemode reload` |         | Reloads the plugin configurations            |
 
 ## Permissions
 | Permission                       | Description                                                        | Default |
