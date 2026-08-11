@@ -30,6 +30,7 @@ jobs:
         env:
           RELEASE: true
           MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+          HANGAR_TOKEN: N/A
           VERSION_NAME: ${{ github.event.release.name }}
           VERSION: ${{ github.event.release.tag_name }}
           CHANGELOG: ${{ github.event.release.body }}
@@ -38,6 +39,7 @@ jobs:
       - name: Publish to Hangar
         env:
           RELEASE: true
+          MODRINTH_TOKEN: N/A
           HANGAR_TOKEN: ${{ secrets.HANGAR_TOKEN }}
           VERSION_NAME: ${{ github.event.release.name }}
           VERSION: ${{ github.event.release.tag_name }}
