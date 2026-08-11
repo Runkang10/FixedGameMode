@@ -23,15 +23,17 @@ object Permissions {
     }
 
     fun register() {
+        val default = PermissionDefault.OP
+
         GAME_MODE.values.forEach { pair ->
-            val self = Permission(pair.self)
-            val others = Permission(pair.others)
+            val self = Permission(pair.self, default)
+            val others = Permission(pair.others, default)
             DefaultPermissions.registerPermission(self)
             DefaultPermissions.registerPermission(others)
         }
 
         listOf(Core.COMMAND, Core.RELOAD).forEach { permission ->
-            DefaultPermissions.registerPermission(Permission(permission, PermissionDefault.OP))
+            DefaultPermissions.registerPermission(Permission(permission, default))
         }
     }
 }
