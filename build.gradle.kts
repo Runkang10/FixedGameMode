@@ -35,15 +35,16 @@ repositories {
 }
 
 paperPluginYaml {
-    name = rootProject.name
+    name.set(rootProject.name)
 
-    main = "io.github.runkang10.fixedGameMode.FixedGameMode"
-    bootstrapper = "io.github.runkang10.fixedGameMode.FixedGameModeBootstrap"
-    apiVersion = "26.2"
+    main.set("io.github.runkang10.fixedGameMode.FixedGameMode")
+    bootstrapper.set("io.github.runkang10.fixedGameMode.FixedGameModeBootstrap")
+    apiVersion.set("26.2")
+    foliaSupported.set(true)
 
-    load = BukkitPluginYaml.PluginLoadOrder.STARTUP
+    load.set(BukkitPluginYaml.PluginLoadOrder.STARTUP)
     authors.addAll("Runkang10")
-    website = "https://github.com/Runkang10/FixedGameMode"
+    website.set("https://github.com/Runkang10/FixedGameMode")
 
     dependencies {
         server("packetevents", PaperPluginYaml.Load.BEFORE, joinClasspath = true, required = false)
