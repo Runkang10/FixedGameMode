@@ -8,6 +8,7 @@ plugins {
     alias(libs.plugins.run.paper)
     alias(libs.plugins.resource.factory.paper)
     alias(libs.plugins.minotaur)
+    alias(libs.plugins.hangerPublish)
 }
 
 repositories {
@@ -64,22 +65,55 @@ tasks {
         duplicatesStrategy = DuplicatesStrategy.INCLUDE
     }
 
-    if (System.getenv("RELEASE")?.toBoolean() ?: false) modrinth {
-        token.set(System.getenv("MODRINTH_TOKEN") ?: error("Missing 'MODRINTH_TOKEN' variable!"))
+    if (System.getenv("RELEASE")?.toBoolean() ?: false) {
+        val releaseName = System.getenv("VERSION_NAME") ?: error("Missing 'VERSION_NAME' variable!")
+        val releaseVersion = System.getenv("VERSION")?.removePrefix("v") ?: error("Missing 'VERSION' variable!")
+        val supportedVersions = listOf("26.1", "26.1.1", "26.1.2", "26.2")
+        val releaseChangelog = System.getenv("CHANGELOG") ?: error("Missing 'CHANGELOG' variable!")
+        val readme = rootProject.file("README.md").readText()
 
-        projectId.set("xbr87sYf")
-        versionName.set(System.getenv("VERSION_NAME") ?: error("Missing 'VERSION_NAME' variable!"))
-        versionNumber.set(System.getenv("VERSION")?.removePrefix("v") ?: error("Missing 'VERSION' variable!"))
-        versionType.set("release")
-        uploadFile.set(shadowJar)
-        gameVersions.addAll("26.1", "26.1.1", "26.1.2", "26.2")
-        loaders.addAll("paper", "purpur", "folia")
-        changelog.set(System.getenv("CHANGELOG") ?: error("Missing 'CHANGELOG' variable!"))
-        dependencies {
-            required.project("packetevents")
+        modrinth {
+            token.set(System.getenv("MODRINTH_TOKEN") ?: error("Missing 'MODRINTH_TOKEN' variable!"))
+
+            projectId.set("xbr87sYf")
+            versionName.set(releaseName)
+            versionNumber.set(releaseVersion)
+            versionType.set("release")
+            uploadFile.set(shadowJar)
+            gameVersions.addAll(supportedVersions)
+            loaders.addAll("paper", "purpur", "folia")
+            changelog.set(releaseChangelog)
+            dependencies {
+                required.project("packetevents")
+            }
+
+            syncBodyFrom.set(readme)
         }
 
-        syncBodyFrom.set(rootProject.file("README.md").readText())
+        hangarPublish {
+            publications.register("plugin") {
+                apiKey.set(System.getenv("HANGAR_TOKEN") ?: error("Missing 'HANGAR_TOKEN' variable!"))
+
+                id.set("FixedGameMode")
+                channel.set("Release")
+                version.set(releaseVersion)
+                changelog.set(releaseChangelog)
+
+                platforms {
+                    paper {
+                        url.set("https://modrinth.com/plugin/fixedgamemode/version/$releaseVersion")
+                        platformVersions.set(supportedVersions)
+                        dependencies {
+                            url("PacketEvents", "https://modrinth.com/plugin/packetevents") {
+                                required.set(true)
+                            }
+                        }
+                    }
+                }
+
+                pages.resourcePage(readme)
+            }
+        }
     }
 
     test {
