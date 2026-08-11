@@ -1,11 +1,14 @@
-# FixedGameMode
-[![GITHUB](https://img.shields.io/badge/github-repo-blue?style=flat-square&logo=github)](https://github.com/Runkang10/FixedGameMode)
-[![PUBLISH WORKFLOW](https://img.shields.io/github/actions/workflow/status/Runkang10/FixedGameMode/publish.yml?style=flat-square&label=publish)](https://github.com/Runkang10/FixedGameMode/actions/workflows/publish.yml)
-[![TEST WORKFLOW](https://img.shields.io/github/actions/workflow/status/Runkang10/FixedGameMode/test.yml?style=flat-square&label=test)](https://github.com/Runkang10/FixedGameMode/actions/workflows/test.yml)
-[![LICENSE](https://img.shields.io/badge/license-MIT-orange?style=flat-square)](https://github.com/Runkang10/FixedGameMode?tab=MIT-1-ov-file)
+<div align="center">
 
-Have you ever gotten annoyed by `[Debug]: Unable to open game mode switcher; no permission`? If so, this plugin is the
-solution for you.
+# FixedGameMode
+[![MODRINTH DOWNLOADS](https://img.shields.io/modrinth/dt/xbr87sYf?style=for-the-badge&logo=modrinth)](https://modrinth.com/plugin/fixedgamemode)
+[![GITHUB](https://img.shields.io/badge/github-repo-blue?style=for-the-badge&logo=github)](https://github.com/Runkang10/FixedGameMode)
+[![LICENSE](https://img.shields.io/badge/license-MIT-orange?style=for-the-badge)](https://github.com/Runkang10/FixedGameMode?tab=MIT-1-ov-file)
+
+Have you ever gotten annoyed by `[Debug]: Unable to open game mode switcher; no permission`?\
+If so, this plugin is the solution for you.
+
+</div>
 
 ## How it works
 - If a player doesn't have OP level 2 or greater (full OP is level 4), this plugin will trick the player into thinking
