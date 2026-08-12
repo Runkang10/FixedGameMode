@@ -1,9 +1,10 @@
 <div align="center">
 
 # FixedGameMode
-[![MODRINTH DOWNLOADS](https://img.shields.io/modrinth/dt/xbr87sYf?style=for-the-badge&logo=modrinth)](https://modrinth.com/plugin/fixedgamemode)
-[![GITHUB](https://img.shields.io/badge/github-repo-blue?style=for-the-badge&logo=github)](https://github.com/Runkang10/FixedGameMode)
-[![LICENSE](https://img.shields.io/badge/license-MIT-orange?style=for-the-badge)](https://github.com/Runkang10/FixedGameMode?tab=MIT-1-ov-file)
+[![MODRINTH DOWNLOADS](https://img.shields.io/modrinth/dt/xbr87sYf?style=flat-square&logo=modrinth)](https://modrinth.com/plugin/fixedgamemode)
+[![GITHUB RELEASE](https://img.shields.io/github/v/release/Runkang10/FixedGameMode?style=flat-square)](https://github.com/Runkang10/FixedGameMode)
+[![GITHUB TEST WORKFLOW](https://img.shields.io/github/actions/workflow/status/Runkang10/FixedGameMode/test.yml?branch=main&style=flat-square)](https://github.com/Runkang10/FixedGameMode)
+[![LICENSE](https://img.shields.io/badge/license-MIT-orange?style=flat-square)](https://github.com/Runkang10/FixedGameMode?tab=MIT-1-ov-file)
 
 Have you ever gotten annoyed by `[Debug]: Unable to open game mode switcher; no permission`?\
 If so, this plugin is the solution for you.
