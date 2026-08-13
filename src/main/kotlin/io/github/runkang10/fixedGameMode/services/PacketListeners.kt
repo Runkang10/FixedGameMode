@@ -20,8 +20,8 @@ class PacketListeners(registry: KeyedRegistry) : GenericService {
             logger.error("Please install PacketEvents from Modrinth: https://modrinth.com/plugin/packetevents")
             return
         }
-        val eventManager = PacketEvents.getAPI().eventManager
-        eventManager.registerListeners(*packetListeners)
+
+        PacketEvents.getAPI().eventManager.registerListeners(*packetListeners)
 
         logger.loaded("Packet listeners")
     }
@@ -32,8 +32,7 @@ class PacketListeners(registry: KeyedRegistry) : GenericService {
 
         logger.unloading("Packet listeners")
 
-        val eventManager = PacketEvents.getAPI().eventManager
-        eventManager.unregisterListeners(*packetListeners)
+        PacketEvents.getAPI().eventManager.unregisterListeners(*packetListeners)
 
         logger.unloaded("Packet listeners")
     }

@@ -9,6 +9,7 @@ import io.papermc.paper.plugin.configuration.PluginMeta
 import io.papermc.paper.plugin.lifecycle.event.LifecycleEventManager
 import io.papermc.paper.plugin.lifecycle.event.types.LifecycleEvents
 
+@Suppress("UnstableApiUsage")
 class Commands(
     private val logger: ColoredLogger,
     private val pluginMeta: PluginMeta,

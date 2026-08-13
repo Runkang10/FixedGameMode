@@ -42,8 +42,7 @@ internal class FixedGameModeBootstrap : PluginBootstrap {
         translations.load()
         registry.add(translations, "translations")
 
-        val commands = Commands(logger, context.pluginMeta, context.lifecycleManager, registry)
-        commands.load()
+        Commands(logger, context.pluginMeta, context.lifecycleManager, registry).load()
     }
 
     override fun createPlugin(context: PluginProviderContext) = FixedGameMode(registry)
