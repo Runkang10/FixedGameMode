@@ -25,7 +25,6 @@ repositories {
     compileOnly(libs.packetEvents)
 
     implementation(libs.kotlin.stdlib)
-    implementation(libs.kotlinx.serialization)
     implementation(libs.kotlinx.coroutines)
     implementation(libs.compactMono)
     implementation(libs.configurate.hocon)
@@ -35,8 +34,12 @@ repositories {
     testImplementation(libs.junit)
 }
 
+val releaseVersion = System.getenv("VERSION")?.removePrefix("v") ?: "0.0.0-DEV"
+
 paperPluginYaml {
     name.set(rootProject.name)
+    description.set(property("description") as String)
+    version.set(releaseVersion)
 
     main.set("io.github.runkang10.fixedGameMode.FixedGameMode")
     bootstrapper.set("io.github.runkang10.fixedGameMode.FixedGameModeBootstrap")
@@ -67,7 +70,6 @@ tasks {
 
     if (System.getenv("RELEASE")?.toBoolean() ?: false) {
         val releaseName = System.getenv("VERSION_NAME") ?: error("Missing 'VERSION_NAME' variable!")
-        val releaseVersion = System.getenv("VERSION")?.removePrefix("v") ?: error("Missing 'VERSION' variable!")
         val supportedVersions = listOf("26.1", "26.1.1", "26.1.2", "26.2")
         val releaseChangelog = System.getenv("CHANGELOG") ?: error("Missing 'CHANGELOG' variable!")
         val readme = rootProject.file("README.md").readText()
