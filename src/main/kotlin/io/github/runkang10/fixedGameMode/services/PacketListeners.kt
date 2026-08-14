@@ -14,13 +14,6 @@ class PacketListeners(registry: KeyedRegistry) : GenericService {
     override fun load() {
         logger.loading("Packet listeners")
 
-        val pluginManager = Bukkit.getPluginManager()
-        if (pluginManager.getPlugin("packetevents") == null) {
-            logger.error("PacketEvents not found! Only plugin commands will work.")
-            logger.error("Please install PacketEvents from Modrinth: https://modrinth.com/plugin/packetevents")
-            return
-        }
-
         PacketEvents.getAPI().eventManager.registerListeners(*packetListeners)
 
         logger.loaded("Packet listeners")

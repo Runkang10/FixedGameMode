@@ -5,6 +5,7 @@ on:
     paths: [ gradle/**, src/**, '*.kts', gradle.properties ]
   pull_request:
     paths: [ gradle/**, src/**, '*.kts', gradle.properties ]
+  workflow_dispatch:
 
 jobs:
   test:
