@@ -55,7 +55,7 @@ object GenericGameMode {
         targets?.forEach { target ->
             target.gameMode = gameMode
             val tags = TagResolvers.gameMode(gameMode, target.name)
-            sender.sendRichMessage(prefix + translations.changed.others, tags)
+            if (sender != target) sender.sendRichMessage(prefix + translations.changed.others, tags)
             target.sendRichMessage(prefix + translations.changed.self, tags)
         }
     }
