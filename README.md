@@ -32,9 +32,12 @@ message.
 
 ## Requirements
 - [Paper](https://papermc.io/downloads/paper) or any <u>Paper fork</u>
+  - [Folia](https://papermc.io/downloads/folia) or any <u>Folia fork</u> is also supported.
 - Java 25
 - Any permission plugin like [LuckPerms](https://luckperms.net) (optional)
 - Have [PacketEvents](https://modrinth.com/plugin/packetevents) installed
+  - You can also not install this plugin, but you will not be able to change the game mode through game mode switcher
+    unless you have real OP.
 
 ## Commands
 See the **Permissions** section to find the required permission for each command.
@@ -67,4 +70,3 @@ All permissions below are granted to OP players by default.
 | `fixedgamemode.survival.others`  | Allows switching the target's game mode                            |
 | `fixedgamemode.command`          | Grants access to the `/fixedgamemode` command                      |
 | `fixedgamemode.command.reload`   | Allows reloading the plugin configurations                         |
-
