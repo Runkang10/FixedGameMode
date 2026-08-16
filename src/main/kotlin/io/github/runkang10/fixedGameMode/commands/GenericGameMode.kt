@@ -41,7 +41,7 @@ object GenericGameMode {
         val translations = translations.get()
         val prefix = translations.prefix
 
-        if (sender !is Player && targets == null) {
+        if (sender !is Player && targets.isNullOrEmpty()) {
             sender.sendRichMessage(prefix + translations.missingTarget)
             return
         }
