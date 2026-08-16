@@ -23,11 +23,11 @@ class FixedGameModeCommand(registry: KeyedRegistry) : BrigadierCommand {
 
         subcommand("reload") {
             permission(Permissions.Core.RELOAD)
-            execute {
+            execute { context ->
                 val prefix = translations.get().prefix
                 val reload = translations.get().reload
 
-                val sender = it.source.sender
+                val sender = context.source.sender
                 sender.sendRichMessage(prefix + reload.reloading)
                 Coroutine.launch {
                     val settingsResult = settings.load()
