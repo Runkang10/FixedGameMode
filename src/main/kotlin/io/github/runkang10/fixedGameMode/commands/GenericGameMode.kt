@@ -34,6 +34,7 @@ object GenericGameMode {
     ) {
         val source = context.source
         val sender = source.sender
+        val executor = source.executor
         val targets = runCatching {
             context.getArgument<PlayerSelectorArgumentResolver>("target")?.resolve(source)
         }.getOrNull()
@@ -41,21 +42,26 @@ object GenericGameMode {
         val translations = translations.get()
         val prefix = translations.prefix
 
-        if (sender !is Player && targets.isNullOrEmpty()) {
+        if (targets != null && targets.isEmpty()) {
             sender.sendRichMessage(prefix + translations.missingTarget)
             return
         }
 
-        if (sender is Player && targets == null) {
-            sender.gameMode = gameMode
-            sender.sendRichMessage(prefix + translations.changed.self, TagResolvers.gameMode(gameMode))
+        if (executor !is Player && targets == null) {
+            sender.sendRichMessage(prefix + translations.missingTarget)
+            return
+        }
+
+        if (executor is Player && targets == null) {
+            executor.gameMode = gameMode
+            executor.sendRichMessage(prefix + translations.changed.self, TagResolvers.gameMode(gameMode))
             return
         }
 
         targets?.forEach { target ->
             target.gameMode = gameMode
             val tags = TagResolvers.gameMode(gameMode, target.name)
-            if (sender != target) sender.sendRichMessage(prefix + translations.changed.others, tags)
+            if (executor != target) sender.sendRichMessage(prefix + translations.changed.others, tags)
             target.sendRichMessage(prefix + translations.changed.self, tags)
         }
     }
