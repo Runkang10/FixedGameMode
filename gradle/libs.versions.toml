@@ -1,7 +1,7 @@
 [versions]
 kotlin = "2.4.10"
 kotlinx = "1.11.0"
-compactMono = "2.2.0"
+compactMono = "2.3.0"
 configurate = "4.2.0"
 
 paperApi = "26.2.build.+"
