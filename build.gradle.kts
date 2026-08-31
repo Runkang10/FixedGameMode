@@ -29,9 +29,6 @@ repositories {
     implementation(libs.compactMono)
     implementation(libs.configurate.hocon)
     implementation(libs.configurate.extra.kotlin)
-
-    testImplementation(kotlin("test"))
-    testImplementation(libs.junit)
 }
 
 val releaseVersion = System.getenv("VERSION")?.removePrefix("v") ?: "0.0.0-DEV"
@@ -115,16 +112,6 @@ tasks {
 
                 pages.resourcePage(readme)
             }
-        }
-    }
-
-    test {
-        useJUnitPlatform()
-        testLogging {
-            showExceptions = true
-            showCauses = true
-            showStackTraces = true
-            showStandardStreams = true
         }
     }
 
