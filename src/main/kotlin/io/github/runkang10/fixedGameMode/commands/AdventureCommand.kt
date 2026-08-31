@@ -2,9 +2,9 @@ package io.github.runkang10.fixedGameMode.commands
 
 import io.github.runkang10.compactmono.commands.BrigadierCommand
 import io.github.runkang10.compactmono.commands.BrigadierCommandMeta
+import io.github.runkang10.compactmono.configuration.LoggedConfiguration
 import io.github.runkang10.compactmono.services.KeyedRegistry
 import io.github.runkang10.fixedGameMode.configurations.current.Translations
-import io.github.runkang10.fixedGameMode.services.LoggedConfiguration
 import io.github.runkang10.fixedGameMode.utilities.Permissions
 import org.bukkit.GameMode
 

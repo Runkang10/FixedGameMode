@@ -2,11 +2,11 @@ package io.github.runkang10.fixedGameMode.commands
 
 import com.mojang.brigadier.tree.LiteralCommandNode
 import io.github.runkang10.compactmono.commands.*
+import io.github.runkang10.compactmono.configuration.IConfiguration
+import io.github.runkang10.compactmono.configuration.LoggedConfiguration
 import io.github.runkang10.compactmono.services.KeyedRegistry
 import io.github.runkang10.fixedGameMode.configurations.current.Settings
 import io.github.runkang10.fixedGameMode.configurations.current.Translations
-import io.github.runkang10.fixedGameMode.services.IConfiguration
-import io.github.runkang10.fixedGameMode.services.LoggedConfiguration
 import io.github.runkang10.fixedGameMode.utilities.Coroutine
 import io.github.runkang10.fixedGameMode.utilities.Permissions
 import io.papermc.paper.command.brigadier.CommandSourceStack

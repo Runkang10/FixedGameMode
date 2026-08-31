@@ -2,8 +2,8 @@ package io.github.runkang10.fixedGameMode.commands
 
 import com.mojang.brigadier.tree.LiteralCommandNode
 import io.github.runkang10.compactmono.commands.*
+import io.github.runkang10.compactmono.configuration.IConfiguration
 import io.github.runkang10.fixedGameMode.configurations.current.Translations
-import io.github.runkang10.fixedGameMode.services.IConfiguration
 import io.github.runkang10.fixedGameMode.utilities.Permissions
 import io.github.runkang10.fixedGameMode.utilities.TagResolvers
 import io.papermc.paper.command.brigadier.CommandSourceStack

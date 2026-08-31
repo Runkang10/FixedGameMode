@@ -1,11 +1,11 @@
 package io.github.runkang10.fixedGameMode
 
+import io.github.runkang10.compactmono.configuration.LoggedConfiguration
 import io.github.runkang10.compactmono.services.ColoredLogger
 import io.github.runkang10.compactmono.services.KeyedRegistry
 import io.github.runkang10.fixedGameMode.configurations.current.Settings
 import io.github.runkang10.fixedGameMode.configurations.current.Translations
 import io.github.runkang10.fixedGameMode.services.Commands
-import io.github.runkang10.fixedGameMode.services.LoggedConfiguration
 import io.papermc.paper.plugin.bootstrap.BootstrapContext
 import io.papermc.paper.plugin.bootstrap.PluginBootstrap
 import io.papermc.paper.plugin.bootstrap.PluginProviderContext

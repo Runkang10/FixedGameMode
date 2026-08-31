@@ -9,10 +9,10 @@ import com.github.retrooper.packetevents.wrapper.play.client.WrapperPlayClientCh
 import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerEntityStatus
 import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerSystemChatMessage
 import io.github.retrooper.packetevents.util.SpigotConversionUtil
+import io.github.runkang10.compactmono.configuration.LoggedConfiguration
 import io.github.runkang10.compactmono.services.KeyedRegistry
 import io.github.runkang10.compactmono.services.schedulers.EntityScheduler
 import io.github.runkang10.fixedGameMode.configurations.current.Translations
-import io.github.runkang10.fixedGameMode.services.LoggedConfiguration
 import io.github.runkang10.fixedGameMode.utilities.Permissions
 import io.github.runkang10.fixedGameMode.utilities.TagResolvers
 import net.kyori.adventure.text.Component
