@@ -4,7 +4,6 @@
 [![MODRINTH DOWNLOADS](https://img.shields.io/modrinth/dt/xbr87sYf?style=flat-square&logo=modrinth)](https://modrinth.com/plugin/fixedgamemode)
 [![GITHUB RELEASE](https://img.shields.io/github/v/release/Runkang10/FixedGameMode?style=flat-square)](https://github.com/Runkang10/FixedGameMode)
 [![GITHUB TEST WORKFLOW](https://img.shields.io/github/actions/workflow/status/Runkang10/FixedGameMode/test.yml?branch=main&style=flat-square)](https://github.com/Runkang10/FixedGameMode)
-[![LICENSE](https://img.shields.io/badge/license-MIT-orange?style=flat-square)](https://github.com/Runkang10/FixedGameMode?tab=MIT-1-ov-file)
 
 Have you ever gotten annoyed by `[Debug]: Unable to open game mode switcher; no permission`?\
 If so, this plugin is the solution for you.
