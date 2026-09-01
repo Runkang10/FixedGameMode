@@ -3,7 +3,6 @@
 # FixedGameMode
 [![MODRINTH DOWNLOADS](https://img.shields.io/modrinth/dt/xbr87sYf?style=flat-square&logo=modrinth)](https://modrinth.com/plugin/fixedgamemode)
 [![GITHUB RELEASE](https://img.shields.io/github/v/release/Runkang10/FixedGameMode?style=flat-square)](https://github.com/Runkang10/FixedGameMode)
-[![GITHUB TEST WORKFLOW](https://img.shields.io/github/actions/workflow/status/Runkang10/FixedGameMode/test.yml?branch=main&style=flat-square)](https://github.com/Runkang10/FixedGameMode)
 
 Have you ever gotten annoyed by `[Debug]: Unable to open game mode switcher; no permission`?\
 If so, this plugin is the solution for you.
@@ -51,7 +50,7 @@ See the **Permissions** section to find the required permission for each command
 | `/spectator <target>`   |         | Switches the target's game mode to spectator |
 | `/survival`             | `/gms`  | Switches game mode to survival               |
 | `/survival <target>`    |         | Switches the target's game mode to survival  |
-| `/fixedgamemode`        | `/fgm`  | Gives access to the `/fixedgamemode` command |
+| `/fixedgamemode`        | `/fgm`  |                                              |
 | `/fixedgamemode reload` |         | Reloads the plugin configurations            |
 
 ## Permissions
